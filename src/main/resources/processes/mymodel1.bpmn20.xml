@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
+  <process id="mymodel1" name="mymodel1" isExecutable="true">
+    <documentation>mymodel1</documentation>
+    <startEvent id="startEvent1" name="开始" activiti:initiator="applyUserId"></startEvent>
+    <userTask id="sid-FAA974DD-AEDE-4DEC-99F7-AF09735A4324" name="资产经理发起" activiti:candidateUsers="资产经理"></userTask>
+    <sequenceFlow id="sid-64BC7694-6AFC-47D3-857E-CE2471E3E091" sourceRef="startEvent1" targetRef="sid-FAA974DD-AEDE-4DEC-99F7-AF09735A4324"></sequenceFlow>
+    <userTask id="sid-915ACCBF-4803-4D42-9574-8A7702B4F220" name="资产部门总经理审核" activiti:candidateUsers="资产总经理"></userTask>
+    <userTask id="sid-C3947173-9A58-42B1-A8D5-F48A46676CBE" name="风控经理审核" activiti:candidateUsers="风控经理"></userTask>
+    <userTask id="sid-ED0C5CA2-CF05-4C50-94D8-5A51C3BDB6AD" name="风控部门总经理审核" activiti:candidateUsers="风控总经理"></userTask>
+    <userTask id="sid-D1AC78D8-5A74-4A1C-AF38-9C827F4EE48F" name="法务经理审核" activiti:candidateUsers="法务经理"></userTask>
+    <userTask id="sid-0489CBF6-4CE7-4E72-AD1E-B34212F5F445" name="法务部门总经理审核" activiti:candidateUsers="法务总经理"></userTask>
+    <userTask id="sid-BBB8E2A2-E02F-4647-AB32-3D91A4DCD01D" name="总裁审核" activiti:candidateUsers="总裁"></userTask>
+    <sequenceFlow id="sid-54C563CD-E095-4A7E-B1CE-6A2E38F1CA8A" sourceRef="sid-FAA974DD-AEDE-4DEC-99F7-AF09735A4324" targetRef="sid-915ACCBF-4803-4D42-9574-8A7702B4F220"></sequenceFlow>
+    <sequenceFlow id="sid-AECBBF93-AE6D-4406-B4ED-43B11238F5B7" sourceRef="sid-915ACCBF-4803-4D42-9574-8A7702B4F220" targetRef="sid-C3947173-9A58-42B1-A8D5-F48A46676CBE"></sequenceFlow>
+    <sequenceFlow id="sid-2710FDFC-4E20-4DBC-98DA-36DDA5AC7324" sourceRef="sid-C3947173-9A58-42B1-A8D5-F48A46676CBE" targetRef="sid-ED0C5CA2-CF05-4C50-94D8-5A51C3BDB6AD"></sequenceFlow>
+    <sequenceFlow id="sid-D941D8B1-173C-4DA1-8311-416BBE36F7CD" sourceRef="sid-ED0C5CA2-CF05-4C50-94D8-5A51C3BDB6AD" targetRef="sid-D1AC78D8-5A74-4A1C-AF38-9C827F4EE48F"></sequenceFlow>
+    <sequenceFlow id="sid-0388900A-788E-4F4F-85FA-687C75D7D147" sourceRef="sid-D1AC78D8-5A74-4A1C-AF38-9C827F4EE48F" targetRef="sid-0489CBF6-4CE7-4E72-AD1E-B34212F5F445"></sequenceFlow>
+    <sequenceFlow id="sid-D1221A26-A40D-42FA-A5D1-38C127C82D12" sourceRef="sid-0489CBF6-4CE7-4E72-AD1E-B34212F5F445" targetRef="sid-BBB8E2A2-E02F-4647-AB32-3D91A4DCD01D"></sequenceFlow>
+    <endEvent id="sid-99B82933-D63A-4E4D-9829-B0B17A222B9D"></endEvent>
+    <sequenceFlow id="sid-C6BF797B-B42F-4479-9158-CEC214A7EE37" sourceRef="sid-BBB8E2A2-E02F-4647-AB32-3D91A4DCD01D" targetRef="sid-99B82933-D63A-4E4D-9829-B0B17A222B9D"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_mymodel1">
+    <bpmndi:BPMNPlane bpmnElement="mymodel1" id="BPMNPlane_mymodel1">
+      <bpmndi:BPMNShape bpmnElement="startEvent1" id="BPMNShape_startEvent1">
+        <omgdc:Bounds height="30.0" width="30.0" x="90.0" y="146.00000216744158"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-FAA974DD-AEDE-4DEC-99F7-AF09735A4324" id="BPMNShape_sid-FAA974DD-AEDE-4DEC-99F7-AF09735A4324">
+        <omgdc:Bounds height="80.0" width="100.0" x="240.0" y="121.00000216744158"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-915ACCBF-4803-4D42-9574-8A7702B4F220" id="BPMNShape_sid-915ACCBF-4803-4D42-9574-8A7702B4F220">
+        <omgdc:Bounds height="80.0" width="100.0" x="420.0" y="121.00000216744158"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-C3947173-9A58-42B1-A8D5-F48A46676CBE" id="BPMNShape_sid-C3947173-9A58-42B1-A8D5-F48A46676CBE">
+        <omgdc:Bounds height="80.0" width="100.0" x="615.0" y="121.00000216744158"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-ED0C5CA2-CF05-4C50-94D8-5A51C3BDB6AD" id="BPMNShape_sid-ED0C5CA2-CF05-4C50-94D8-5A51C3BDB6AD">
+        <omgdc:Bounds height="80.0" width="100.0" x="795.0" y="121.00000216744158"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-D1AC78D8-5A74-4A1C-AF38-9C827F4EE48F" id="BPMNShape_sid-D1AC78D8-5A74-4A1C-AF38-9C827F4EE48F">
+        <omgdc:Bounds height="80.0" width="100.0" x="975.0" y="121.00000216744158"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-0489CBF6-4CE7-4E72-AD1E-B34212F5F445" id="BPMNShape_sid-0489CBF6-4CE7-4E72-AD1E-B34212F5F445">
+        <omgdc:Bounds height="80.0" width="100.0" x="1170.0" y="121.00000216744158"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-BBB8E2A2-E02F-4647-AB32-3D91A4DCD01D" id="BPMNShape_sid-BBB8E2A2-E02F-4647-AB32-3D91A4DCD01D">
+        <omgdc:Bounds height="80.0" width="100.0" x="1365.0" y="121.00000216744158"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sid-99B82933-D63A-4E4D-9829-B0B17A222B9D" id="BPMNShape_sid-99B82933-D63A-4E4D-9829-B0B17A222B9D">
+        <omgdc:Bounds height="28.0" width="28.0" x="1596.4545439274843" y="147.00000216744158"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sid-2710FDFC-4E20-4DBC-98DA-36DDA5AC7324" id="BPMNEdge_sid-2710FDFC-4E20-4DBC-98DA-36DDA5AC7324">
+        <omgdi:waypoint x="715.0" y="161.00000216744158"></omgdi:waypoint>
+        <omgdi:waypoint x="795.0" y="161.00000216744158"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-AECBBF93-AE6D-4406-B4ED-43B11238F5B7" id="BPMNEdge_sid-AECBBF93-AE6D-4406-B4ED-43B11238F5B7">
+        <omgdi:waypoint x="520.0" y="161.00000216744158"></omgdi:waypoint>
+        <omgdi:waypoint x="615.0" y="161.00000216744158"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-0388900A-788E-4F4F-85FA-687C75D7D147" id="BPMNEdge_sid-0388900A-788E-4F4F-85FA-687C75D7D147">
+        <omgdi:waypoint x="1075.0" y="161.00000216744158"></omgdi:waypoint>
+        <omgdi:waypoint x="1170.0" y="161.00000216744158"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-C6BF797B-B42F-4479-9158-CEC214A7EE37" id="BPMNEdge_sid-C6BF797B-B42F-4479-9158-CEC214A7EE37">
+        <omgdi:waypoint x="1465.0" y="161.00000216744158"></omgdi:waypoint>
+        <omgdi:waypoint x="1596.4545439274843" y="161.00000216744158"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-D1221A26-A40D-42FA-A5D1-38C127C82D12" id="BPMNEdge_sid-D1221A26-A40D-42FA-A5D1-38C127C82D12">
+        <omgdi:waypoint x="1270.0" y="161.00000216744158"></omgdi:waypoint>
+        <omgdi:waypoint x="1365.0" y="161.00000216744158"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-64BC7694-6AFC-47D3-857E-CE2471E3E091" id="BPMNEdge_sid-64BC7694-6AFC-47D3-857E-CE2471E3E091">
+        <omgdi:waypoint x="120.0" y="161.00000216744158"></omgdi:waypoint>
+        <omgdi:waypoint x="240.0" y="161.00000216744158"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-54C563CD-E095-4A7E-B1CE-6A2E38F1CA8A" id="BPMNEdge_sid-54C563CD-E095-4A7E-B1CE-6A2E38F1CA8A">
+        <omgdi:waypoint x="340.0" y="161.00000216744158"></omgdi:waypoint>
+        <omgdi:waypoint x="420.0" y="161.00000216744158"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-D941D8B1-173C-4DA1-8311-416BBE36F7CD" id="BPMNEdge_sid-D941D8B1-173C-4DA1-8311-416BBE36F7CD">
+        <omgdi:waypoint x="895.0" y="161.00000216744158"></omgdi:waypoint>
+        <omgdi:waypoint x="975.0" y="161.00000216744158"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
